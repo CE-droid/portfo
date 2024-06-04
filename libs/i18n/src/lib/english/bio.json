@@ -1,0 +1,96 @@
+{
+  "bio": {
+    "media": "/assets/3d-img-removebg-preview.png",
+    "details": {
+      "heading": "Bio",
+      "name": "Cerine Gousmine",
+      "description": " As a problem solver fullstack developer with nearly 3 years in the software industry, my journey has been fueled by curiosity and passion. I've embraced challenges to craft user-centric experiences that blend creativity and code. Beyond the screen, I find joy in capturing moments through photography, exploring new worlds in books, and expressing myself with strokes of paint. Grateful for the opportunities, I continue to evolve, inspired by both pixels and the beauty of life's little details"
+    }
+  },
+  "experience": {
+    "heading": "Experience",
+    "experience": [
+      {
+        "date": "February 2024 - Present",
+        "title": "Full Stack Developer",
+        "company": "Hattaa"
+      },
+      {
+        "date": "February 2023 - January 2024",
+        "title": "Lead Full Stack Developer",
+        "company": "thinline"
+      },
+      {
+        "date": "February 2022 – February 2023",
+        "title": "Full Stack Developer",
+        "company": "thinline"
+      }
+      ,
+      {
+        "date": "December 2020 – May 2021",
+        "title": "Full Stack Developer",
+        "company": "Netfer Smart Solutions"
+      }
+    ]
+  },
+  "education": {
+    "heading": "Education",
+    "education": [
+      {
+        "date": "September 2020 – September 2022",
+        "degree": "Master 2: Network and Embeded systems",
+        "university": "Alger 1 Ben Youcef Ben Kheda"
+      },
+      {
+        "date": "September 2015 – September 2020",
+        "degree": "Licence: Software and information system",
+        "university": "Alger 1 Ben Youcef Ben Kheda"
+      }
+    ]
+  },
+  "profiles": {
+    "heading": "Profiles",
+    "caption": "Stay Connected",
+    "media": null,
+    "button": {
+      "link": "/contact",
+      "icon": {
+        "light": "/assets/icons/icon-2.svg",
+        "dark": "/assets/icons/icon.svg"
+      }
+    },
+    "profiles": [
+      {
+        "link": "https://github.com/CE-droid",
+        "icon": "iconoir-github"
+      },
+      {
+        "link": "www.linkedin.com/in/cerine-gousmine",
+        "icon": "iconoir-linkedin"
+      }
+    ]
+  },
+  "contact": {
+    "heading": "Let's <br /> <span>collaborate.</span>",
+    "media": "/assets/icons/icon2.png",
+    "button": {
+      "link": "/contact",
+      "icon": {
+        "light": "/assets/icons/icon-2.svg",
+        "dark": "/assets/icons/icon.svg"
+      }
+    }
+  },
+  "credentials": {
+    "heading": "Qualifications",
+    "caption": "A little on Cerine",
+    "media": "/assets/signature_cerine.png",
+    "button": {
+      "link": "/credentials",
+      "icon": {
+        "light": "/assets/icons/icon-2.svg",
+        "dark": "/assets/icons/icon.svg"
+      }
+    }
+  }
+}

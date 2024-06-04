@@ -1,0 +1,89 @@
+{
+  "bio": {
+    "heading": "Cerine Gousmine.",
+    "caption": "Full Stack Developer",
+    "description": "With a background in network and embedded system engineering and a thriving career as a full-stack web developer, I excel at providing top-notch technical support and solving complex problems with lightning speed.",
+    "descriptionExtended": "",
+    "location": "📍 Based in Algiers .",
+    "media": "/assets/3d-img-removebg-preview.png",
+    "button": {
+      "link": "/bio",
+      "icon": {
+        "light": "/assets/icons/icon-2.svg",
+        "dark": "/assets/icons/icon.svg"
+      }
+    }
+  },
+  "credentials": {
+    "heading": "Qualifications",
+    "caption": "A little on Cerine",
+    "media": "/assets/credentials.png",
+    "button": {
+      "link": "/bio",
+      "icon": {
+        "light": "/assets/icons/icon-2.svg",
+        "dark": "/assets/icons/icon.svg"
+      }
+    }
+  },
+  "cv": {
+    "heading": "Portfolio",
+    "caption": "CV",
+    "media": "/assets/portfolio.png",
+    "button": {
+      "link": "/portfolio",
+      "icon": {
+        "light": "/assets/icons/icon-2.svg",
+        "dark": "/assets/icons/icon.svg"
+      }
+    }
+  },
+
+
+  "profiles": {
+    "heading": "Profiles",
+    "caption": "Stay Connected",
+    "media": null,
+    "button": {
+      "link": "/contact",
+      "icon": {
+        "light": "/assets/icons/icon-2.svg",
+        "dark": "/assets/icons/icon.svg"
+      }
+    },
+    "profiles": [
+      {
+        "link": "https://github.com/CE-droid",
+        "icon": "iconoir-github"
+      },
+      {
+        "link": "www.linkedin.com/in/cerine-gousmine",
+        "icon": "iconoir-globe"
+      }
+    ]
+  },
+  "facts": {
+    "quickFacts": [
+      {
+        "count": "2+",
+        "label": "YEARS <br /> EXPERIENCE"
+      },
+      
+      {
+        "count": "20+",
+        "label": "PRODUCTION <br /> PROJECTS"
+      }
+    ]
+  },
+  "contact": {
+    "heading": "Let's <br /> collaborate <span>together.</span>",
+    "media": "/assets/icons/icon2.png",
+    "button": {
+      "link": "/contact",
+      "icon": {
+        "light": "/assets/icons/icon-2.svg",
+        "dark": "/assets/icons/icon.svg"
+      }
+    }
+  }
+}
