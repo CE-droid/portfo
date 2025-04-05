@@ -29,7 +29,7 @@ export const Header = () => {
       <div className="container">
         <div className="gx-row d-flex align-items-center justify-content-between">
           <Link href="/" className="logo">
-            <img src="/assets/logo/cerine-logo-min.png" alt="Logo" />
+            <img src="/assets/logo/logocerine (1).png" alt="Logo" />
           </Link>
           <nav
             className={classNames('navbar', { active: displayMobileNavbar })}

@@ -10,7 +10,6 @@ import { CASE_STUDIES_PATH, caseStudiesFilePaths } from '../../utils/mdx.utils';
 
 export const getStaticProps: GetStaticProps<PortfolioPageProps> = () => {
   const caseStudies = caseStudiesFilePaths
-    // Parse content
     .map((filePath) => {
       const fileContents = fs.readFileSync(
         path.join(CASE_STUDIES_PATH, filePath)
@@ -27,7 +26,9 @@ export const getStaticProps: GetStaticProps<PortfolioPageProps> = () => {
         },
         filePath,
       };
-    });
+    })
+    // ✅ Sort by latest modified date
+    .sort((a, b) => new Date(b.metadata.modified).getTime() - new Date(a.metadata.modified).getTime());
 
   return { props: { caseStudies } };
 };
@@ -47,7 +48,7 @@ const PortfolioPage = ({ caseStudies }: PortfolioPageProps) => {
           </h1>
           <div className="row">
             <div className="col-md-4">
-              {caseStudies.slice(0, 2).map((study, i) => (
+              {caseStudies.slice(0, 3).map((study, i) => (
                 <div data-aos="zoom-in" key={i}>
                   <div className="project-item shadow-box">
                     <Link
@@ -87,85 +88,98 @@ const PortfolioPage = ({ caseStudies }: PortfolioPageProps) => {
                 <img src="/assets/star-2.png" alt="Star" /> Portfolio{' '}
                 <img src="/assets/star-2.png" alt="Star" />
               </h1>
-              <div className="d-flex align-items-start gap-24">
-                {caseStudies.slice(2, 4).map((study, i) => (
-                  <div data-aos="zoom-in" className="flex-1" key={i}>
-                    <div className="project-item shadow-box">
-                      <Link
-                        className="overlay-link"
-                        as={`/portfolio/${study.filePath.replace(
-                          /\.mdx?$/,
-                          ''
-                        )}`}
-                        href={`/portfolio/[entry]`}
-                      />
-                      <img src="/assets/bg1.png" alt="BG" className="bg-img" />
-                      <div className="project-img">
-                        <img src={study.metadata.thumbnail} alt="thumbnail" />
-                      </div>
-                      <div className="d-flex align-items-center justify-content-between">
-                        <div className="project-info">
-                          <p>{study.metadata.category}</p>
-                          <h1>{study.metadata.title}</h1>
-                          <Moment format="L - h:mm a">
-                            {study.metadata.created}
-                          </Moment>
-                        </div>
+
+              {[3, 5].map((start, idx) => (
+                <div className="d-flex align-items-start gap-24" key={idx}>
+                  {caseStudies.slice(start, start + 2).map((study, i) => (
+                    <div data-aos="zoom-in" className="flex-1" key={i}>
+                      <div className="project-item shadow-box">
                         <Link
+                          className="overlay-link"
                           as={`/portfolio/${study.filePath.replace(
                             /\.mdx?$/,
                             ''
                           )}`}
                           href={`/portfolio/[entry]`}
-                          className="project-btn"
-                        >
-                          <img src="/assets/icons/cta-icon.svg" alt="Button" />
-                        </Link>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-              <div className="d-flex align-items-start gap-24">
-                {caseStudies.slice(4, 6).map((study, i) => (
-                  <div data-aos="zoom-in" className="flex-1" key={i}>
-                    <div className="project-item shadow-box">
-                      <Link
-                        className="overlay-link"
-                        as={`/portfolio/${study.filePath.replace(
-                          /\.mdx?$/,
-                          ''
-                        )}`}
-                        href={`/portfolio/[entry]`}
-                      />
-                      <img src="/assets/bg1.png" alt="BG" className="bg-img" />
-                      <div className="project-img">
-                        <img src={study.metadata.thumbnail} alt="thumbnail" />
-                      </div>
-                      <div className="d-flex align-items-center justify-content-between">
-                        <div className="project-info">
-                          <p>{study.metadata.category}</p>
-                          <h1>{study.metadata.title}</h1>
-                          <Moment format="L - h:mm a">
-                            {study.metadata.created}
-                          </Moment>
+                        />
+                        <img src="/assets/bg1.png" alt="BG" className="bg-img" />
+                        <div className="project-img">
+                          <img src={study.metadata.thumbnail} alt="thumbnail" />
                         </div>
-                        <Link
-                          as={`/portfolio/${study.filePath.replace(
-                            /\.mdx?$/,
-                            ''
-                          )}`}
-                          href={`/portfolio/[entry]`}
-                          className="project-btn"
-                        >
-                          <img src="/assets/icons/cta-icon.svg" alt="Button" />
-                        </Link>
+                        <div className="d-flex align-items-center justify-content-between">
+                          <div className="project-info">
+                            <p>{study.metadata.category}</p>
+                            <h1>{study.metadata.title}</h1>
+                            <Moment format="L - h:mm a">
+                              {study.metadata.modified}
+                            </Moment>
+                          </div>
+                          <Link
+                            as={`/portfolio/${study.filePath.replace(
+                              /\.mdx?$/,
+                              ''
+                            )}`}
+                            href={`/portfolio/[entry]`}
+                            className="project-btn"
+                          >
+                            <img
+                              src="/assets/icons/cta-icon.svg"
+                              alt="Button"
+                            />
+                          </Link>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                ))}
-              </div>
+                  ))}
+                </div>
+              ))}
+            
+            
             </div>
+            {[6,8,10].map((start, idx) => (
+                <div className="d-flex align-items-start gap-24" key={idx}>
+                  {caseStudies.slice(start, start + 2).map((study, i) => (
+                    <div data-aos="zoom-in" className="flex-1" key={i}>
+                      <div className="project-item shadow-box">
+                        <Link
+                          className="overlay-link"
+                          as={`/portfolio/${study.filePath.replace(
+                            /\.mdx?$/,
+                            ''
+                          )}`}
+                          href={`/portfolio/[entry]`}
+                        />
+                        <img src="/assets/bg1.png" alt="BG" className="bg-img" />
+                        <div className="project-img">
+                          <img src={study.metadata.thumbnail} alt="thumbnail" />
+                        </div>
+                        <div className="d-flex align-items-center justify-content-between">
+                          <div className="project-info">
+                            <p>{study.metadata.category}</p>
+                            <h1>{study.metadata.title}</h1>
+                            <Moment format="L - h:mm a">
+                              {study.metadata.modified}
+                            </Moment>
+                          </div>
+                          <Link
+                            as={`/portfolio/${study.filePath.replace(
+                              /\.mdx?$/,
+                              ''
+                            )}`}
+                            href={`/portfolio/[entry]`}
+                            className="project-btn"
+                          >
+                            <img
+                              src="/assets/icons/cta-icon.svg"
+                              alt="Button"
+                            />
+                          </Link>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              ))}
           </div>
         </div>
       </section>
