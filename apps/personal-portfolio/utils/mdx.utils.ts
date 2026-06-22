@@ -10,7 +10,16 @@ export const postFilePaths = fs
   // Only include md(x) files
   .filter((path) => /\.mdx?$/.test(path));
 
-// caseStudiesFilePaths is the list of mdx files inside the POSTS_PATH directory
+// Exclude these case studies when building the site (removed by request)
+const EXCLUDED_CASE_STUDIES = new Set([
+  'flurrish.mdx',
+  'fakestore.mdx',
+  'hopin-technologies.mdx',
+  'hellotax.mdx',
+]);
+
+// caseStudiesFilePaths is the list of mdx files inside the CASE_STUDIES_PATH directory
 export const caseStudiesFilePaths = fs
   .readdirSync(CASE_STUDIES_PATH)
-  .filter((path) => /\.mdx?$/.test(path));
+  .filter((p) => /\.mdx?$/.test(p))
+  .filter((p) => !EXCLUDED_CASE_STUDIES.has(p));
