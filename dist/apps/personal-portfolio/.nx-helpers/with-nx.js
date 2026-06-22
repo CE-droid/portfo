@@ -51,7 +51,7 @@ function regexEqual(x, y) {
  */
 function getWithNxContext() {
 return {
-workspaceRoot: 'C:\Users\Dell\Desktop\personal-portfolio-master\personal-portfolio-master',
+workspaceRoot: 'C:\Users\Dell\OneDrive\Bureau\portfolio',
 libsDir: 'libs'
 }
 }

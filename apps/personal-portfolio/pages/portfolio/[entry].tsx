@@ -38,7 +38,8 @@ export const getStaticProps: GetStaticProps<PortfolioEntryPageProps> = async ({
   const markdownContent = await serialize(content, {
     // Optionally pass remark/rehype plugins
     mdxOptions: {
-      remarkPlugins: [remarkGfm],
+      // Temporarily disable remark plugins to avoid runtime plugin incompatibilities
+      remarkPlugins: [],
       rehypePlugins: [],
     },
     scope: data,
